@@ -3,9 +3,9 @@ package zooAnimales;
 import java.util.ArrayList;
 
 public class Reptil extends Animal {
-	private static ArrayList<Reptil> listado = new ArrayList<Reptil>();
-	public int iguanas;
-	public int serpientes;
+	private static ArrayList<Reptil> listado = new ArrayList<>();
+	public static int iguanas;
+	public static int serpientes;
 	private String colorEscamas;
 	private int largoCola;
 	
@@ -28,16 +28,18 @@ public class Reptil extends Animal {
 		return "reptar";
 	}
 	
-	public void crearIguana(String nombre, int edad, String genero) {
+	public static Reptil crearIguana(String nombre, int edad, String genero) {
 		Reptil iguana = new Reptil(nombre, edad, "humedal", genero, "verde", 3);
 		listado.add(iguana);
 		iguanas++;
+		return iguana;
 	}
 	
-	public void crearSerpiente(String nombre, int edad, String genero) {
+	public static Reptil crearSerpiente(String nombre, int edad, String genero) {
 		Reptil serpiente = new Reptil(nombre, edad, "jungla", genero, "blanco", 1);
 		listado.add(serpiente);
 		serpientes++;
+		return serpiente;
 	}
 	
 	public static ArrayList<Reptil> getListado() {

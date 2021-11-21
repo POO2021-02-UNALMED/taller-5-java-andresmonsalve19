@@ -25,7 +25,7 @@ public class Animal {
 		return "desplazarse";
 	}
 	
-	public String totalPorTipo() {
+	public static String totalPorTipo() {
 		return "Mamiferos: "+ Mamifero.cantidadMamiferos() +"\nAves"+Ave.cantidadAves()
 				+"\nReptiles"+Reptil.cantidadReptiles()+"\nPeces"+Pez.cantidadPeces();
 	}
@@ -44,7 +44,7 @@ public class Animal {
 					", habito en "+this.habitat+
 					" y mi genero es "+this.genero+
 					", la zona en la que me ubico es "+this.getZona().getNombre()+
-					", en el "+this.getZona().getZoo()[0].getNombre();
+					", en el "+this.getZona().getZoo().getNombre();
 		}	
 	}
 	

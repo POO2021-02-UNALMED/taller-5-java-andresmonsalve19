@@ -3,15 +3,13 @@ package zooAnimales;
 import java.util.ArrayList;
 
 public class Anfibio extends Animal {
-	private static ArrayList<Anfibio> listado = new ArrayList<Anfibio>();
-	public int ranas;
-	public int salamandras;
+	private static ArrayList<Anfibio> listado = new ArrayList<>();
+	public static int ranas;
+	public static int salamandras;
 	private String colorPiel;
 	private boolean venenoso;
 
-	public Anfibio() {
-		;
-	}
+	public Anfibio() {}
 	
 	public Anfibio(String nombre, int edad, String habitat, String genero, String colorPiel, boolean venenoso) {
 		super(nombre, edad, habitat, genero);
@@ -28,16 +26,18 @@ public class Anfibio extends Animal {
 		return "saltar";
 	}
 	
-	public void crearRana(String nombre, int edad, String genero) {
+	public static Anfibio crearRana(String nombre, int edad, String genero) {
 		Anfibio rana = new Anfibio(nombre, edad, "selva", genero, "rojo", true);
 		listado.add(rana);
 		ranas++;
+		return rana;
 	}
 	
-	public void crearSalamandra(String nombre, int edad, String genero) {
+	public static Anfibio crearSalamandra(String nombre, int edad, String genero) {
 		Anfibio salamandra = new Anfibio(nombre, edad, "selva", genero, "negro y amarillo", false);
 		listado.add(salamandra);
 		salamandras++;
+		return salamandra;
 	}
 
 	public static ArrayList<Anfibio> getListado() {
@@ -52,9 +52,7 @@ public class Anfibio extends Animal {
 		return colorPiel;
 	}
 
-	public void setColorPiel(String colorPiel) {
-		this.colorPiel = colorPiel;
-	}
+	public void setColorPiel(String colorPiel) {this.colorPiel = colorPiel;}
 
 	public boolean isVenenoso() {
 		return venenoso;

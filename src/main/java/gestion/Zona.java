@@ -6,17 +6,17 @@ import zooAnimales.Animal;
 
 public class Zona {
 	private String nombre;
-	private Zoologico[] zoo = new Zoologico[1];
+	private Zoologico zoo;
 	private ArrayList<Animal> animales = new ArrayList<Animal>();
 	
 	public Zona() {
 		;
 	}
 	
-	public Zona(String nombre, Zoologico[] zoo) {
+	public Zona(String nombre, Zoologico zoo) {
 		this.nombre = nombre;
 		this.zoo = zoo;
-		zoo[0].agregarZonas(this);
+		zoo.agregarZonas(this);
 	}
 	
 	public String getNombre() {
@@ -27,11 +27,11 @@ public class Zona {
 		this.nombre = nombre;
 	}
 
-	public Zoologico[] getZoo() {
+	public Zoologico getZoo() {
 		return zoo;
 	}
 
-	public void setZoo(Zoologico[] zoo) {
+	public void setZoo(Zoologico zoo) {
 		this.zoo = zoo;
 	}
 
